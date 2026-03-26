@@ -1,5 +1,13 @@
 # Python RPG Game Development Plan
 
+Lets create a RPG Game Project.
+
+1. Team: Nova (Manager, Coding, Reviewer, Tester) and Lyra (Coding) work together 
+2. Create a project document and a backlog list
+3. Once the task/phase/backlog done, update the project document and backlog list for tracking purpose, and report to me.
+4. Sync to GitHub to repo https://github.com/swijaya33/rpg-game-project and report to me.
+
+
 I've created a comprehensive plan for developing a Python RPG game with a world map and character movement. Here's what I've prepared:
 
 ## Project Structure
