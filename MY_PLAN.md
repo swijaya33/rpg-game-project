@@ -1,3 +1,11 @@
+Lets create a RPG Game Project.
+
+1. Team: Nova (Manager, Coding, Reviewer, Tester) and Lyra (Coding) work together 
+2. Create a project document and a backlog list
+3. Once the task/phase/backlog done, update the project document and backlog list for tracking purpose, and report to me.
+4. Sync to GitHub to repo https://github.com/swijaya33/rpg-game-project and report to me.
+
+
 # Python RPG Game Development Plan
 
 I've created a comprehensive plan for developing a Python RPG game with a world map and character movement. Here's what I've prepared:
@@ -5,12 +13,12 @@ I've created a comprehensive plan for developing a Python RPG game with a world 
 ## Project Structure
 - **Main components**: Game framework using Pygame, tile-based map system, character movement
 - **Core files created**:
- - `main.py` - Game entry point and main loop
- - `game.py` - Main game class managing game state
- - `player.py` - Player character with movement and stats
- - `map.py` - Map system with tile-based rendering
- - `maps/test_map.csv` - Sample world map with different tile types
- - `requirements.txt` - Python dependencies (pygame)
+  - `main.py` - Game entry point and main loop
+  - `game.py` - Main game class managing game state
+  - `player.py` - Player character with movement and stats
+  - `map.py` - Map system with tile-based rendering
+  - `maps/test_map.csv` - Sample world map with different tile types
+  - `requirements.txt` - Python dependencies (pygame)
 
 ## Key Features Implemented
 
@@ -44,12 +52,9 @@ I've created a comprehensive plan for developing a Python RPG game with a world 
 3. **Character System** - Add player movement, stats, and animations
 4. **Polish and Features** - Add sound, UI, save/load functionality
 
-## Next Steps
 
-To start developing:
-1. Install the required dependencies: `pip install -r requirements.txt`
-2. Run the game: `python main.py`
-3. Use WASD or arrow keys to move the character around the map
-4. The character will be blocked by water tiles (blue) but can walk on grass (green)
+## Additional
 
-The current implementation provides a working foundation that you can extend with additional features like NPCs, quests, combat systems, and more sophisticated graphics. Would you like me to elaborate on any specific aspect of the implementation or add additional features?
+1. Use WASD or arrow keys to move the character around the map
+2. The character will be blocked by water tiles (blue) but can walk on grass (green)
+3. The current implementation provides a working foundation that you can extend with additional features like NPCs, quests, combat systems, and more sophisticated graphics. 

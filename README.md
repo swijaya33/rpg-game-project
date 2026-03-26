@@ -29,3 +29,12 @@ This repository contains the development of a Python-based RPG game with a world
 - [x] Map System Implemented
 - [x] Character Movement System
 - [ ] Polish and Additional Features
+
+## How to Run
+1. Install the required dependencies: `pip install -r requirements.txt`
+2. Run the game: `python main.py`
+3. Use WASD or arrow keys to move the character around the map
+4. The character will be blocked by water tiles (blue) but can walk on grass (green)
+
+## Current Implementation
+The current implementation provides a working foundation that you can extend with additional features like NPCs, quests, combat systems, and more sophisticated graphics.
