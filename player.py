@@ -50,6 +50,11 @@ class Player:
             self.x = old_x
             self.y = old_y
         
+        # Keep player within map bounds (additional safety)
+        if hasattr(game_map, 'width') and hasattr(game_map, 'height'):
+            self.x = max(0, min(self.x, game_map.width - self.width))
+            self.y = max(0, min(self.y, game_map.height - self.height))
+        
         # Update animation
         self.animation_counter += 1
         if self.animation_counter >= 10:  # Change frame every 10 ticks

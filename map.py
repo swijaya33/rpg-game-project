@@ -69,22 +69,40 @@ class Map:
         screen_width = screen.get_width()
         screen_height = screen.get_height()
         
+        # Calculate camera position to keep player centered
+        camera_x = player.x - screen_width // 2
+        camera_y = player.y - screen_height // 2
+        
+        # Ensure camera doesn't go outside map boundaries
+        if camera_x < 0:
+            camera_x = 0
+        if camera_y < 0:
+            camera_y = 0
+        if camera_x > self.width - screen_width:
+            camera_x = self.width - screen_width
+        if camera_y > self.height - screen_height:
+            camera_y = self.height - screen_height
+        
         # Render tiles
         for y, row in enumerate(self.tiles):
             for x, tile_type in enumerate(row):
-                # Calculate screen position
-                screen_x = x * self.tile_width - player.x + screen_width // 2
-                screen_y = y * self.tile_height - player.y + screen_height // 2
+                # Calculate screen position relative to camera
+                screen_x = x * self.tile_width - camera_x
+                screen_y = y * self.tile_height - camera_y
                 
-                # Draw tile based on type
-                if tile_type == '0':  # Grass
-                    pygame.draw.rect(screen, (34, 139, 34), (screen_x, screen_y, self.tile_width, self.tile_height))
-                elif tile_type == '1':  # Water
-                    pygame.draw.rect(screen, (0, 0, 255), (screen_x, screen_y, self.tile_width, self.tile_height))
-                elif tile_type == '2':  # Forest
-                    pygame.draw.rect(screen, (0, 100, 0), (screen_x, screen_y, self.tile_width, self.tile_height))
-                elif tile_type == '3':  # Road
-                    pygame.draw.rect(screen, (128, 128, 128), (screen_x, screen_y, self.tile_width, self.tile_height))
-                
-                # Draw tile border
-                pygame.draw.rect(screen, (0, 0, 0), (screen_x, screen_y, self.tile_width, self.tile_height), 1)
+                # Only draw if tile is within screen bounds
+                if (screen_x < screen_width and screen_x + self.tile_width > 0 and
+                    screen_y < screen_height and screen_y + self.tile_height > 0):
+                    
+                    # Draw tile based on type
+                    if tile_type == '0':  # Grass
+                        pygame.draw.rect(screen, (34, 139, 34), (screen_x, screen_y, self.tile_width, self.tile_height))
+                    elif tile_type == '1':  # Water
+                        pygame.draw.rect(screen, (0, 0, 255), (screen_x, screen_y, self.tile_width, self.tile_height))
+                    elif tile_type == '2':  # Forest
+                        pygame.draw.rect(screen, (0, 100, 0), (screen_x, screen_y, self.tile_width, self.tile_height))
+                    elif tile_type == '3':  # Road
+                        pygame.draw.rect(screen, (128, 128, 128), (screen_x, screen_y, self.tile_width, self.tile_height))
+                    
+                    # Draw tile border
+                    pygame.draw.rect(screen, (0, 0, 0), (screen_x, screen_y, self.tile_width, self.tile_height), 1)
