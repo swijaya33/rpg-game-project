@@ -9,6 +9,10 @@ class Map:
         self.tile_height = 32
         self.tiles = []
         self.load_map()
+        
+        # Calculate map dimensions
+        self.width = len(self.tiles[0]) * self.tile_width if self.tiles else 0
+        self.height = len(self.tiles) * self.tile_height if self.tiles else 0
     
     def load_map(self):
         try:

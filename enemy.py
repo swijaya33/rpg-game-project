@@ -37,8 +37,9 @@ class Enemy:
             self.y += self.speed
         
         # Keep enemy within map boundaries
-        self.x = max(0, min(self.x, game_map.width - self.width))
-        self.y = max(0, min(self.y, game_map.height - self.height))
+        if hasattr(game_map, 'width') and hasattr(game_map, 'height'):
+            self.x = max(0, min(self.x, game_map.width - self.width))
+            self.y = max(0, min(self.y, game_map.height - self.height))
     
     def render(self, screen):
         # Draw enemy as a rectangle
