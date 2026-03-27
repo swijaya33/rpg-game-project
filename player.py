@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+from particle import Particle
 
 class Player:
     def __init__(self, x, y):
